@@ -18,13 +18,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SeasonComponent } from './modules/components/season/season.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistoryComponent,
     PersonsComponent,
-    EventComponent
+    EventComponent,
+    SeasonComponent
   ],
   imports: [
     BrowserModule,
