@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "natillas"
+  "defaultProject": "natillas",
+  "cli": {
+    "analytics": "603ca423-b770-4415-acf6-0be4b9b17ba2"
+  }
 }

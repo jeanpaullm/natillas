@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Person } from './person';
+import { Person } from '../../models/person';
 
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';

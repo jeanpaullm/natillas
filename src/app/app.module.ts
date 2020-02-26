@@ -5,9 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HistoryComponent } from './history/history.component';
-import { PersonsComponent } from './persons/persons.component';
-import { EventComponent } from './event/event.component';
+import { HistoryComponent } from './modules/components/history/history.component';
+import { PersonsComponent } from './modules/components/persons/persons.component';
+import { EventComponent } from './modules/components/event/event.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';

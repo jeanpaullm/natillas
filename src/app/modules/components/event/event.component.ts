@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
-import { EventService } from '../event.service'
-
+import { EventService } from '../../../providers/event/event.service'
 
 @Component({
   selector: 'app-event',

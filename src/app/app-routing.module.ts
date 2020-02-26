@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
 
-import { HistoryComponent } from './history/history.component';
-import { PersonsComponent } from './persons/persons.component';
-import { EventComponent } from './event/event.component';
-
+import { HistoryComponent } from './modules/components/history/history.component';
+import { PersonsComponent } from './modules/components/persons/persons.component';
+import { EventComponent } from './modules/components/event/event.component';
 
 const routes: Routes = [
   { path: 'history', component: HistoryComponent},
