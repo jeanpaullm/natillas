@@ -21,6 +21,7 @@ export class EventComponent implements OnInit {
       person2: '',
       food: '',
       date: '',
+      newSeason: '',
     });
   }
 
