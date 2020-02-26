@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    Personas    
+</mat-toolbar>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Person Column -->
+    <ng-container matColumnDef="person">
+      <th mat-header-cell *matHeaderCellDef> Persona </th>
+      <td mat-cell *matCellDef="let element"> {{element.person}} </td>
+    </ng-container>
+  
+    <!-- Participations Column -->
+    <ng-container matColumnDef="participations">
+      <th mat-header-cell *matHeaderCellDef> Partcipaciones </th>
+      <td mat-cell *matCellDef="let element"> {{element.participations}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>  

@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  Historial   
+</mat-toolbar>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let event"> {{event.date}} </td>
+    </ng-container>
+  
+    <!-- Person1 Column -->
+    <ng-container matColumnDef="persons">
+      <th mat-header-cell *matHeaderCellDef> Participantes </th>
+      <td mat-cell *matCellDef="let event"> {{event.person1}} y {{event.person2}} </td>
+    </ng-container>
+  
+    <!-- Food Column -->
+    <ng-container matColumnDef="food">
+      <th mat-header-cell *matHeaderCellDef> Comida </th>
+      <td mat-cell *matCellDef="let event"> {{event.food}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>  
