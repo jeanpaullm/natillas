@@ -11,8 +11,8 @@ import { PersonService } from '../../../providers/person/person.service'
 
 export class PersonsComponent implements OnInit {
 
-  displayedColumns: string[] = ['person', 'participations'];
   dataSource: Person[];
+  displayedColumns: string[] = ['person', 'participations'];
 
   constructor(
     private personService: PersonService,
@@ -23,7 +23,7 @@ export class PersonsComponent implements OnInit {
   }
 
   getPersons(): void{
-    this.personService.getPersons().subscribe(persons => this.dataSource = persons)
+    this.personService.getPersons().subscribe(persons => this.dataSource = persons);
   }
 
 }
