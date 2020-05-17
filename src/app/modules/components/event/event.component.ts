@@ -15,13 +15,13 @@ export class EventComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private eventService: EventService,
-  ) { 
+  ) {
     this.eventForm = this.formBuilder.group({
       person1: '',
       person2: '',
       food: '',
       date: '',
-      newSeason: '',
+      startNewSeason: '',
     });
   }
 
@@ -36,6 +36,6 @@ export class EventComponent implements OnInit {
       console.log('Error adding: ', error);
     })
     console.warn('Your order has been submitted', eventForm);
-  } 
+  }
 
 }

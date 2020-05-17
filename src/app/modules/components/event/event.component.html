@@ -1,36 +1,44 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-    Evento    
+  Evento
 </mat-toolbar>
 
-    <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)" class="event-form">
-        <mat-label>Personas</mat-label>
-        <table class="personas" cellspacing="0"><tr>
-            <td><mat-form-field class="person1">
-              <input matInput id = "person1" type="text" formControlName="person1" placeholder="Ex. Samus">
-            </mat-form-field></td>
-            <td><mat-form-field class="person2">
-              <input matInput id = "person2" type="text" formControlName="person2" placeholder="Ex. Mario">
-            </mat-form-field></td>
-          </tr></table>
-      
-          <p>
-        <mat-form-field class="food">
-            <mat-label>Comida</mat-label>
-            <input matInput id = "food" type="text" formControlName="food" placeholder="Ex. Pizza">
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)" class="event-form">
+
+  <p>
+    <mat-checkbox class="example-margin" formControlName="startNewSeason">Nueva Temporada</mat-checkbox>
+  </p>
+
+  <mat-label>Personas</mat-label>
+
+  <table class="personas" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="person1">
+          <input matInput id="person1" type="text" formControlName="person1" placeholder="Ex. Samus">
         </mat-form-field>
-    </p>
-    <p>
-        <mat-form-field class="date">
-            <mat-label>Fecha</mat-label>
-            <input matInput id = "date" type="date" formControlName="date">
+      </td>
+      <td>
+        <mat-form-field class="person2">
+          <input matInput id="person2" type="text" formControlName="person2" placeholder="Ex. Mario">
         </mat-form-field>
-      </p>
+      </td>
+    </tr>
+  </table>
 
-      <p>
-        <mat-checkbox class="example-margin" formControlName="newSeason">Nueva Temporada</mat-checkbox>
-      </p> 
+  <p>
+    <mat-form-field class="food">
+      <mat-label>Comida</mat-label>
+      <input matInput id="food" type="text" formControlName="food" placeholder="Ex. Pizza">
+    </mat-form-field>
+  </p>
 
-        <button mat-raised-button type="submit">Proponer Evento</button>
-    
-      </form>
+  <p>
+    <mat-form-field class="date">
+      <mat-label>Fecha</mat-label>
+      <input matInput id="date" type="date" formControlName="date">
+    </mat-form-field>
+  </p>
 
+  <button mat-raised-button type="submit">Crear Evento</button>
+
+</form>

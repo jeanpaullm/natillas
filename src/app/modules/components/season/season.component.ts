@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Season } from '../../../models/season';
+import { Event } from '../../../models/event';
 import { SeasonService } from '../../../providers/season/season.service'
 
 @Component({
@@ -10,10 +10,14 @@ import { SeasonService } from '../../../providers/season/season.service'
 })
 export class SeasonComponent implements OnInit {
 
-  season:Season;
+  dataSource: Event[];
+  displayedColumns: string[] = ['date', 'persons', 'food'];
+
+/*
+  season:Event;
   displayedColumns1:string[] = ['food'];
   displayedColumns2:string[] = ['person'];
-
+*/
   constructor(
     private seasonService:SeasonService,
   ) { }
@@ -22,8 +26,9 @@ export class SeasonComponent implements OnInit {
     this.getSeason();
   }
 
-  getSeason(): void{
-    this.seasonService.getSeason().subscribe(season => this.season = (season && (season.length) >= 1) ? season.pop() : this.season = null);
+  getSeason(): void {
+    //this.seasonService.getSeason().subscribe(season => this.season = (season && (season.length) >= 1) ? season.pop() : this.season = null);
+    this.seasonService.getSeason().subscribe(season => this.dataSource = season);
     //this.seasonService.getSeason().subscribe(season => this.season = season);
   }
 

@@ -12,7 +12,7 @@ import { PersonService } from '../../../providers/person/person.service'
 export class PersonsComponent implements OnInit {
 
   dataSource: Person[];
-  displayedColumns: string[] = ['person', 'participations'];
+  displayedColumns: string[] = ['person', 'participations', 'currentSeason'];
 
   constructor(
     private personService: PersonService,

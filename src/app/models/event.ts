@@ -3,4 +3,5 @@ export interface Event {
     person2: string;
     food: string;
     date: string;
+    currentSeason: boolean;
   }

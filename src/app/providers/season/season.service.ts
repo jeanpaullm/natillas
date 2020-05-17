@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Season } from '../../models/season'
+import { Event } from '../../models/event'
 
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -11,16 +11,17 @@ import 'firebase/firestore';
 })
 export class SeasonService {
 
-  private seasonsCollection: AngularFirestoreCollection<Season>;
+  private eventsCollection: AngularFirestoreCollection<Event>;
 
   constructor(
     private firestore: AngularFirestore
   ) {
-    this.seasonsCollection = firestore.collection('seasons', ref => ref.where("active", "==", true).limit(1));
+    //this.eventsCollection = firestore.collection('events', ref => ref.where("currentSeason", "==", true).limit(1));
+    this.eventsCollection = firestore.collection('events', ref => ref.where("currentSeason", "==", true));
   }
 
-  getSeason():Observable<Season[]> {
-    return this.seasonsCollection.valueChanges();
+  getSeason():Observable<Event[]> {
+    return this.eventsCollection.valueChanges();
   }
 
 }
