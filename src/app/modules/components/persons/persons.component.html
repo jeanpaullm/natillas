@@ -23,7 +23,8 @@
     <ng-container matColumnDef="currentSeason">
       <th mat-header-cell *matHeaderCellDef> Temporada Actual </th>
       <td mat-cell *matCellDef="let element">
-        <mat-checkbox [checked]="element.currentSeason" [disabled]="true"> </mat-checkbox>
+        <mat-icon *ngIf="element.currentSeason" aria-hidden="false">check_circle</mat-icon>
+        <mat-icon *ngIf="!element.currentSeason" aria-hidden="false">radio_button_unchecked</mat-icon>
       </td>
     </ng-container>
 
