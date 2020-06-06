@@ -18,10 +18,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { SeasonComponent } from './modules/components/season/season.component';
+import { StartNewSeasonDialogComponent } from './modules/components/start-new-season-dialog/start-new-season-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { SeasonComponent } from './modules/components/season/season.component';
     HistoryComponent,
     PersonsComponent,
     EventComponent,
-    SeasonComponent
+    SeasonComponent,
+    StartNewSeasonDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,7 @@ import { SeasonComponent } from './modules/components/season/season.component';
     MatCheckboxModule,
     MatSnackBarModule,
     MatIconModule,
+    MatDialogModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],

@@ -5,7 +5,13 @@
 <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)" class="event-form">
 
   <p>
-    <mat-checkbox class="example-margin" formControlName="startNewSeason">Nueva Temporada</mat-checkbox>
+    <mat-checkbox
+      class="example-margin"
+      formControlName="startNewSeason"
+      [(ngModel)]="eventForm.startNewSeason"
+      (click)="toggleStartNewSeason()">
+        Nueva Temporada
+    </mat-checkbox>
   </p>
 
   <mat-label>Personas</mat-label>
