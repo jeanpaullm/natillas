@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { EventService } from '../../../providers/event/event.service';
 import { StartNewSeasonDialogComponent } from '../start-new-season-dialog/start-new-season-dialog.component';
@@ -14,7 +14,8 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class EventComponent implements OnInit {
 
-  eventForm;
+  eventForm : FormGroup;
+  startNewSeasonControl = new FormControl(false);
 
   constructor(
     public dialog: MatDialog,
@@ -22,40 +23,40 @@ export class EventComponent implements OnInit {
     private formBuilder: FormBuilder,
     private eventService: EventService,
   ) {
-    this.eventForm = this.formBuilder.group({
+    this.eventForm = formBuilder.group({
       person1: '',
       person2: '',
       food: '',
       date: '',
-      startNewSeason: false,
+      startNewSeason: this.startNewSeasonControl,
     });
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   toggleStartNewSeason():void {
-    console.log(`startNewSeason: ${this.eventForm.startNewSeason}`);
-    if (this.eventForm.startNewSeason === undefined || this.eventForm.startNewSeason == false) {
+    console.log(`startNewSeason: ${this.startNewSeasonControl.value}`);
+    if (this.startNewSeasonControl.value == false) {
       //dialogo
       const dialogRef = this.dialog.open(StartNewSeasonDialogComponent);
 
       dialogRef.afterClosed().subscribe(result => {
-        this.eventForm.startNewSeason = result;
-        console.log(`Dialog result: ${result}`);
+        if(result === undefined || result == false) {
+          this.startNewSeasonControl.setValue(false);
+        }
+        console.log(`Dialog result: ${this.startNewSeasonControl.value}`);
       });
     }
   }
 
   onSubmit(eventForm):void {
     this.eventService.createEvent(eventForm).then(res => {
-      this.eventForm = this.formBuilder.group({
-        person1: '',
-        person2: '',
-        food: '',
-        date: '',
-        startNewSeason: false,
+      this.startNewSeasonControl.setValue(false);
+      this.eventForm.patchValue({
+              person1: '',
+              person2: '',
+              food: '',
+              date: ''
       });
     })
     .catch(error => {

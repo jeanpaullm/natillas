@@ -7,8 +7,7 @@
   <p>
     <mat-checkbox
       class="example-margin"
-      formControlName="startNewSeason"
-      [(ngModel)]="eventForm.startNewSeason"
+      [formControl] = "startNewSeasonControl"
       (click)="toggleStartNewSeason()">
         Nueva Temporada
     </mat-checkbox>
